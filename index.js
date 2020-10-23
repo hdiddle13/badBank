@@ -69,7 +69,7 @@ app.get('/account/login/:email/:password', function (req, res) {
     */
 });
 
-app.get('/account/balance/:email', function (req, res) {
+app.get('/account/get/:email', function (req, res) {
     // Return account balance based on email
     res.send(db.get('accounts').find({email : req.params.email}).get('balance'));
 });

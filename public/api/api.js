@@ -124,7 +124,7 @@ function balance() {
     //  Get user balance
     var status = document.getElementById('status');
     var email = document.getElementById('emailInput').value;
-    var url = '/account/balance/' + email;
+    var url = '/account/get/' + email;
 
     superagent
         .get(url)
