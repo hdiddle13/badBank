@@ -114,7 +114,7 @@ function transactions() {
                 }
                 else{
                     console.log(res.body);
-                    status.innerHTML = JSON.stringify(res.body.transactions,null,1); 
+                    status.innerHTML = JSON.stringify(res.body,null,1); 
                 }
             }
         });
@@ -138,7 +138,7 @@ function balance() {
                 }
                 else{
                     console.log(res.body);
-                    status.innerHTML = res.body.balance; 
+                    status.innerHTML = res.body; 
                 }
             }
         });

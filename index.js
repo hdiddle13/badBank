@@ -71,7 +71,7 @@ app.get('/account/login/:email/:password', function (req, res) {
 
 app.get('/account/balance/:email', function (req, res) {
     // Return account balance based on email
-    res.send(db.get('accounts').find({email : req.params.email}).value());
+    res.send(db.get('accounts').find({email : req.params.email}).get('balance'));
 });
 
 app.get('/account/deposit/:email/:amount', function (req, res) {
@@ -122,7 +122,7 @@ app.get('/account/withdraw/:email/:amount', function (req, res) {
 
 app.get('/account/transactions/:email', function (req, res) {
     // Return all transactions for account
-    var account = db.get('accounts').find(obj => obj.email == req.params.email).value();
+    var account = db.get('accounts').find(obj => obj.email == req.params.email).get('transactions');
     res.send(account);
 });
 
